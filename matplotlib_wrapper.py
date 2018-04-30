@@ -33,8 +33,10 @@ def animate(i):
     This method plots the graph 
     THis method runs in the main thread
 """
-def plot():
+def plot(title):
     ani = animation.FuncAnimation(fig, animate, interval=2)
+    print(title)
+    plt.title("{}\n".format(title))
     plt.show()
 
 

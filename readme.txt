@@ -3,7 +3,9 @@ THis project is used to visualize various sorting algorithms using bar charts
 THe sorting algorithms covered are:-
 
 1.) Insertion sort [0]
-2.)
+2.) Merget Sort [1]
+3.) Quick Sort [2]
+4.) Max Heap Sort[3]
 
 
 We consider three cases

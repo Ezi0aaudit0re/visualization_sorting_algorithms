@@ -72,7 +72,7 @@ def quicksort(arr, start=0, end=len(arr) - 1):
         quicksort(arr, start, par-1)
         quicksort(arr, par+1, end)
         set_arr(arr)
-        time.sleep(SLEEP_TIME + 0.03)
+        time.sleep(SLEEP_TIME)
     else:
         set_arr(arr, par, par-1)
 
