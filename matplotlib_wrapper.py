@@ -14,6 +14,9 @@ arr = list()
 colors = ['b' for i in range(ARRAY_SIZE)]
 
 
+"""
+    This function is used to animate the graph i.e for sorting arrays
+"""
 def animate(i):
     # if arr == None:
     #     # our animation is completed
@@ -26,11 +29,19 @@ def animate(i):
     ax1.bar(ids, arr, color=colors)
 
 
+"""
+    This method plots the graph 
+    THis method runs in the main thread
+"""
 def plot():
     ani = animation.FuncAnimation(fig, animate, interval=2)
     plt.show()
 
 
+"""
+    At every itteration of sorting this function is called to set the values
+    
+"""
 def set_arr(arr_value, color_location=0, previos_color_location=0):
     global arr, colors
     arr = arr_value
