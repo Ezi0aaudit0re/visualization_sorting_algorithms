@@ -182,13 +182,63 @@ def merge(arr, first, middle, last):
             j = j+1
 
 
+############################# MAX HEAP SORT ############################
+"""
+    This is the sorting algortihm that is called
+    :param: arr -> The array to be sorted
+"""
+def max_heap_sort(arr):
+
+    size = len(arr)
+
+    # Build a maxheap.
+    for i in range(size, -1, -1):
+        heapify(arr, size, i)
+        set_arr(arr)
+
+    time.sleep(5) # sleep for two seconds to show the heap built
+    # One by one extract elements
+    for i in range(size - 1, 0, -1):
+        arr[i], arr[0] = arr[0], arr[i]  # swap
+        heapify(arr, i, 0)
+        set_arr(arr)
+        time.sleep(SLEEP_TIME)
+
+
+"""
+    This function is used to create a heap 
+    THe heap created would be used in heap sort
+    :param: root -> THe root node index which wold be compared against its children
+    :param: size -> The size of the heap
+"""
+def heapify(arr, size, root):
+    largest = root  # Initialize largest as root
+    left_node = 2 * root + 1  # left = 2*i + 1
+    right_node = 2 * root + 2  # right = 2*i + 2
+
+    # check if left child is greater than the right child
+    if left_node < size and arr[root] < arr[left_node]:
+        largest = left_node
+
+    # check if the right child node is greater than the node
+    if right_node < size and arr[largest] < arr[right_node]:
+        largest = right_node
+
+    # Change root, if needed
+    if largest != root:
+        arr[root], arr[largest] = arr[largest], arr[root]  # swap
+
+        # Heapify the root.
+        heapify(arr, size, largest)
+
 
 
 
 
 if __name__ == "__main__":
     arr = [3, 4, 2, 6, 7, 5, 1, 10, 9]
-    quick_sort(arr)
+    max_heap_sort(arr)
+
     print(arr)
 
 

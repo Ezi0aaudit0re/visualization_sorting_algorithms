@@ -19,7 +19,7 @@ def main():
     if(len(sys.argv) == 3):
         algo, case = get_algo_and_case()
     else:
-        algo, case = (quick_sort, arr)
+        algo, case = (max_heap_sort, arr)
     thread1 = threading.Thread(target=algo, args=(case,))
     # set the valueus for the graph
     thread2 = threading.Thread(target=plt.bar, args=(case, arr))
